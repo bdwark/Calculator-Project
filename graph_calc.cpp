@@ -1,27 +1,15 @@
 #include <iostream>
 #include <vector> 
+#include <graph_calc.h>
 
-class Polyfunc {
-public:
-
-
-
-};
-
-vector<double> graph_helper(Polyfunc funcobj, double posX, double negX, double posY, double negY){
-
-}
-
-void parseFunc(string func){
+vector<Polyfunc> graph_helper(Polyfunc funcobj, double posX, double negX, double posY, double negY){
     
 }
 
-vector<double> graph_calc(string func, double posX, double negX, double posY, double negY){
-    Polyfunc funcobj;
-    parseFunc(func);
-    
+//void parseFunc(string func){}
 
+vector<Polyfunc> graph_calc(double a, double b, double c, double leftX, double rightX, double topY, double bottomY){
+    vector<Polyfunc> pointList;
 
-
-    return graph_helper(Polyfunc funcobj, double posX, double negX, double posY, double negY);
+    return pointList;
 }
