@@ -3,8 +3,7 @@ private:
     double x;
     double y;
 public:
-    void putX(int tempX){x = tempX;}
-    void putY(int tempY){y = tempY;}
+    Polyfunc(int tempX, int tempY){x = tempX; y = tempY;}
     double getX(){return x;}
     double getY(){return y;}
 };

@@ -1,4 +1,4 @@
 #include <Polyfunc.h>
 
-vector<Polyfunc> graph_helper(Polyfunc funcobj, double posX, double negX, double posY, double negY);
+vector<int> xPointsListFinder(int leftX, int rightX);
 vector<Polyfunc> graph_calc(double a, double b, double c, double leftX, double rightX, double topY, double bottomY);
