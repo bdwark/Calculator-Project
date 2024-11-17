@@ -4,19 +4,19 @@
 #include "graph_calc.h"
 using namespace std;
 
-vector<double> xPointsListFinder(double leftX, double rightX) {
+vector<double> xPointsListFinder(double leftX, double rightX, int pixels) {
     vector <double> xPoints;
     double xSpan = rightX - leftX;
-    double inc = xSpan/1080;
-    for(int i = 0; i <= 1080; i++){
+    double inc = xSpan/pixels;
+    for(int i = 0; i <= pixels; i++){
             xPoints.push_back(leftX + inc*i);
     }
     return xPoints;
 }
 
 
-vector<Polyfunc> graphCalc(double a, double b, double c, double leftX, double rightX){
-    vector<double> xPointsList = xPointsListFinder(leftX, rightX);
+vector<Polyfunc> graphCalc(double a, double b, double c, double leftX, double rightX, int pixels){
+    vector<double> xPointsList = xPointsListFinder(leftX, rightX, pixels);
     vector<Polyfunc> pointList;
     for(int i = 0; i <= xPointsList.size()-1; i++){
         double y = a*pow(xPointsList[i],2) + b*xPointsList[i]+ c;
