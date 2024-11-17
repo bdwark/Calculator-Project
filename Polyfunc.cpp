@@ -8,4 +8,4 @@ Polyfunc::Polyfunc(double tempX, double tempY){
 
 
 double Polyfunc::getX() { return x; }
-double Polyfunc::getY() { return y
+double Polyfunc::getY() { return y; }

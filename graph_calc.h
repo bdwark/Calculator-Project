@@ -1,11 +1,9 @@
 #pragma once
+using namespace std;
 
-class Polyfunc {
-public:
-    Polyfunc(double tempX, double tempY);
-    double getX();
-    double getY();
-private: 
-    double x;
-    double y;
-};
+#include "Polyfunc.h"
+#include <vector>
+
+// Function declarations
+vector<double> xPointsListFinder(double tempLeftX, double tempRightX);
+vector<Polyfunc> graphCalc(double a, double b, double c, double leftX, double rightX);
