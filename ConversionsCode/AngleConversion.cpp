@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include "AngleConversion.h"
 
 using namespace std;
 
