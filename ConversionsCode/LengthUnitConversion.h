@@ -1,5 +1,4 @@
-#ifndef LengthConv
-#define LengthConv
+#pragma once
 
 #include <iostream>
 #include <map>
@@ -10,4 +9,4 @@ using namespace std;
 
 float LengthConv(float val, string unitIn, string unitOut);
 
-#endif
+
