@@ -33,8 +33,8 @@ UnitConversionFrame::UnitConversionFrame() : wxFrame(nullptr, 1501, "Unit Conver
 	unitType = new wxChoice(panel, UNIT_TYPE_ID, wxPoint(0, 120), wxDefaultSize, 3, unitTypes, 0, wxDefaultValidator, wxASCII_STR("Unit Type"));
 	
 	// in and out unit selectors
-	inUnit = new wxChoice(panel, IN_UNIT_ID, wxPoint(100, 0), wxDefaultSize, 3, tempUnits, 0, wxDefaultValidator, wxASCII_STR("In units"));
-	outUnit = new wxChoice(panel, OUT_UNIT_ID, wxPoint(100, 40), wxDefaultSize, 3, tempUnits, 0, wxDefaultValidator, wxASCII_STR("Out units"));
+	inUnit = new wxChoice(panel, IN_UNIT_ID, wxPoint(100, 0), wxDefaultSize, 0, nullptr, 0, wxDefaultValidator, wxASCII_STR("In units"));
+	outUnit = new wxChoice(panel, OUT_UNIT_ID, wxPoint(100, 40), wxDefaultSize, 0, nullptr, 0, wxDefaultValidator, wxASCII_STR("Out units"));
 
 	// input text box
 	inUnitText = new wxTextCtrl(panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxFloatingPointValidator<float>(nullptr, wxNUM_VAL_ZERO_AS_BLANK), wxASCII_STR("In units"));

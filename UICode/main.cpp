@@ -1,5 +1,3 @@
-//#include "./UnitConversionFrame.h"
-//#include "./GrapherFrame.h"
 #include "./ModulesFrame.h"
 
 #include <wx/wx.h>
@@ -10,17 +8,15 @@ class CalculatorApp : public wxApp {
 		bool OnInit() override;
 };
 
+//This macro instantiates the wxApp and handles the memory
 wxIMPLEMENT_APP(CalculatorApp);
 
 bool CalculatorApp::OnInit() {
-	// until switch menu is created, run one frame or the other
+	// Instantiate the module window and show it
 	auto modulesFrame = new ModulesFrame();
 	modulesFrame->Show(true);
-	//auto unitConversionFrame = new UnitConversionFrame();
-	//unitConversionFrame->Show(true);	
-	//auto grapherFrame = new GrapherFrame();
-	//grapherFrame->Show(true);
 	
+	// Set it as the top window so all windows close when it's closed
 	SetTopWindow(modulesFrame);
 	return true;
 }
