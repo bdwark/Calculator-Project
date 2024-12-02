@@ -1,7 +1,7 @@
 #include "GrapherFrame.h"
 
-#include "../GraphingCode/graph_calc.h"
-#include "../GraphingCode/Polyfunc.h"
+#include "../GraphingFunction/graph_calc.h"
+#include "../GraphingFunction/Polyfunc.h"
 
 #include <vector>
 #include <cmath>

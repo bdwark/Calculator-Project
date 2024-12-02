@@ -1,7 +1,7 @@
 #ifndef GRAPHER_FRAME
 #define GRAPHER_FRAME
 
-#include "../GraphingCode/Polyfunc.h"
+#include "../GraphingFunction/Polyfunc.h"
 
 #include <vector>
 #include <wx/wx.h>
