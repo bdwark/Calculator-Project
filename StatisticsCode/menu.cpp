@@ -25,7 +25,7 @@ double stats(string stringNumbers, int func){
     case 4:
         return calc.findHighest(numbers);
     case 5:
-        return calc.stanardDeviation(numbers);
+        return calc.standardDeviation(numbers);
     }
 
 
