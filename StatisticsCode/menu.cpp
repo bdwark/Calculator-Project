@@ -7,9 +7,10 @@ using namespace std;
 
 double stats(string stringNumbers, int func){
     Calculator calc;
-    //make parser for string of numbers seperate by commas
+    // string of numbers seperated by commas parser
     vector<double> numbers;
     string curvalue;
+    // takes in the string and process it like a input stream
     stringstream ss(stringNumbers);
     while (getline(ss, curvalue, ',')) { //Separate each variable per sample from the comma separator
         numbers.push_back(stod(curvalue));

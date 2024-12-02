@@ -2,9 +2,7 @@
 #include "Calculator.h"
 #include <string>
 
-// Function declarations
-//void displayMainMenu();
-//void handleBasicOperations(Calculator& calc);
-//void handleStatisticalOperations(Calculator& calc);
-
+// Function declaration
+// You pass in a string of numbers seperated by commas, 
+// and what of the 5 fucntions you want to use
 double stats(string stringNumbers, int func);

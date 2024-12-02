@@ -6,7 +6,7 @@
 using namespace std;
 
 Calculator::Calculator() {}
-
+  
 double Calculator::divideHelper(double a, double b) {
     if (b == 0) {
         throw std::invalid_argument("Division by zero is not allowed.");
@@ -65,8 +65,13 @@ double Calculator::standardDeviationHelper(const std::vector<double>& numbers) {
 }
 
 // Statistical operations
+// Finds mean
 double Calculator::calculateMean(const std::vector<double>& numbers) { return calculateMeanHelper(numbers); }
+// Finds median
 double Calculator::calculateMedian(const std::vector<double>& numbers) { return calculateMedianHelper(numbers); }
+// Finds lowest value of a set
 double Calculator::findLowest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
+// Finds highest value of a set
 double Calculator::findHighest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
+// Finds standard deviation of a population
 double Calculator::standardDeviation(const std::vector<double>& numbers) { return stanardDeviationHelper(numbers); }
