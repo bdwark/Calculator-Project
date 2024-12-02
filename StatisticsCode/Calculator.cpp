@@ -5,13 +5,7 @@
 #include <stdexcept>
 using namespace std;
 
-Calculator::Calculator(){}
-
-double Calculator::addHelper(double a, double b) { return (a + b); }
-
-double Calculator::subtractHelper(double a, double b) { return a - b; }
-
-double Calculator::multiplyHelper(double a, double b) { return a * b; }
+Calculator::Calculator() {}
 
 double Calculator::divideHelper(double a, double b) {
     if (b == 0) {
@@ -57,24 +51,22 @@ double Calculator::findHighestHelper(const std::vector<double>& numbers) {
     return *std::max_element(numbers.begin(), numbers.end());
 }
 
-double Calculator::stanardDeviationHelper(const std::vector<double>& numbers) {
+double Calculator::standardDeviationHelper(const std::vector<double>& numbers) {
     if (numbers.empty()) {
         throw std::invalid_argument("Cannot find stanard Deviation in an empty vector.");
     }
-
+    double mean = calculateMeanHelper(numbers);
+    double total = 0;
+    for (int i = 0; i < numbers.size(); i++) {
+        total = total + pow((numbers[i] - mean), 2);
+    }
+    double temp = pow(total/numbers.size(), 1.0 / 2.0);
+    return temp;
 }
-
-
-double Calculator::add(double a, double b) {return addHelper(a, b);}
-double Calculator::subtract(double a, double b) { return subtractHelper(a, b); }
-double Calculator::multiply(double a, double b) { return multiplyHelper(a, b); }
-double Calculator::divide(double a, double b) { return divideHelper(a, b); }
-double Calculator::exponentiate(double base, double exponent) { return std::pow(base, exponent); }
-double Calculator::radical(double value, double root) { return std::pow(value, 1.0 / root); }
 
 // Statistical operations
 double Calculator::calculateMean(const std::vector<double>& numbers) { return calculateMeanHelper(numbers); }
 double Calculator::calculateMedian(const std::vector<double>& numbers) { return calculateMedianHelper(numbers); }
 double Calculator::findLowest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
 double Calculator::findHighest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
-double Calculator::stanardDeviation(const std::vector<double>& numbers) { return stanardDeviationHelper(numbers); }
+double Calculator::standardDeviation(const std::vector<double>& numbers) { return stanardDeviationHelper(numbers); }
