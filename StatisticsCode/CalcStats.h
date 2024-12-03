@@ -2,17 +2,17 @@
 #include <vector>
 #include <cmath> // For pow()
 using namespace std;
-class Calculator {
+class CalcStats {
 private:
     // Statistical helper operations
     double calculateMeanHelper(const std::vector<double>& numbers);
-    double calculateMedianHelper(std::vector<double> numbers);
+    double calculateMedianHelper(const std::vector<double> numbers);
     double findLowestHelper(const std::vector<double>& numbers);
     double findHighestHelper(const std::vector<double>& numbers);
     double standardDeviationHelper(const std::vector<double>& numbers);
 
 public:
-    Calculator();
+    CalcStats();
 
     // Statistical operations
     double calculateMean(const std::vector<double>& numbers);
