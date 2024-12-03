@@ -6,7 +6,7 @@
 using namespace std;
 
 double stats(string stringNumbers, int func){
-    Calculator calc;
+    CalcStats calc;
     // string of numbers seperated by commas parser
     vector<double> numbers;
     string curvalue;
