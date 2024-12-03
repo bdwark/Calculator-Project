@@ -23,7 +23,7 @@ double CalcStats::calculateMeanHelper(const std::vector<double>& numbers) {
     return sum / numbers.size();
 }
 
-double CalcStats::calculateMedianHelper(std::vector<double> numbers) {
+double CalcStats::calculateMedianHelper(const std::vector<double> numbers) {
     if (numbers.empty()) {
         throw std::invalid_argument("Cannot calculate median of an empty vector.");
     }
