@@ -1,18 +1,10 @@
+#include "calculator.h"
+
 #include <string>
 #include <iostream>
 #include <cmath>
 
-
 using namespace std;
-
-enum Operation {
-    ADDITION,
-    SUBTRACTION,
-    MULTIPLICATION,
-    DIVISION,
-    POWER,
-    SQRT
-};
 
 /* ---------------------------------------------------------------
     Operations are:
@@ -24,18 +16,8 @@ enum Operation {
         s Square Root (Will only square root number after s)
 -------------------------------------------------------------------*/
 
-class Calculator {
-private:
-    float leftOperand;
-    float rightOperand;
-    float result;
-    Operation operation;
-
-    string leftOp;
-    string rightOp;
-
-    //Parses through string and sets the left and right operators as strings
-    void ParseString(string input) {
+//Parses through string and sets the left and right operators as strings
+void Calculator::ParseString(string input) {
         bool foundOp = false;
         char currentChar;
 
@@ -74,12 +56,12 @@ private:
                 }
             }
         }
-    }
+}
 
-public:
+Calculator::Calculator() {}
 
     //Calculates and returns value as a float
-    float Calculate(string input) {
+float Calculator::Calculate(string input) {
         ParseString(input);
 
         //If sqrt, only convert right operand
@@ -114,5 +96,4 @@ public:
         }
 
         return result;
-    }
-};
+}

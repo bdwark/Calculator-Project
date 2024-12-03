@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 
 using namespace std;
@@ -24,5 +26,6 @@ private:
     void ParseString(string input);
 
 public:
+	Calculator();
     float Calculate(string input);
 };
