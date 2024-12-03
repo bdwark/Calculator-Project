@@ -1,5 +1,5 @@
 #pragma once
-#include "Calculator.h"
+#include "CalcStats.h"
 #include <string>
 
 // Function declaration
