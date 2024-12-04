@@ -6,13 +6,6 @@
 using namespace std;
 
 CalcStats::CalcStats() {}
-  
-double CalcStats::divideHelper(double a, double b) {
-    if (b == 0) {
-        throw std::invalid_argument("Division by zero is not allowed.");
-    }
-    return a / b;
-}
 
 // Statistical operations
 double CalcStats::calculateMeanHelper(const std::vector<double>& numbers) {
