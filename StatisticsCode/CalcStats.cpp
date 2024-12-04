@@ -23,7 +23,7 @@ double CalcStats::calculateMeanHelper(const std::vector<double>& numbers) {
     return sum / numbers.size();
 }
 
-double CalcStats::calculateMedianHelper(const std::vector<double> numbers) {
+double CalcStats::calculateMedianHelper(std::vector<double> numbers) {
     if (numbers.empty()) {
         throw std::invalid_argument("Cannot calculate median of an empty vector.");
     }
@@ -74,4 +74,4 @@ double CalcStats::findLowest(const std::vector<double>& numbers) { return findHi
 // Finds highest value of a set
 double CalcStats::findHighest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
 // Finds standard deviation of a population
-double CalcStats::standardDeviation(const std::vector<double>& numbers) { return stanardDeviationHelper(numbers); }
+double CalcStats::standardDeviation(const std::vector<double>& numbers) { return standardDeviationHelper(numbers); }

@@ -15,6 +15,7 @@ double stats(string stringNumbers, int func){
     while (getline(ss, curvalue, ',')) { //Separate each variable per sample from the comma separator
         numbers.push_back(stod(curvalue));
     }
+
     //control flow
     switch (func) {
     case 1:
@@ -28,6 +29,4 @@ double stats(string stringNumbers, int func){
     case 5:
         return calc.standardDeviation(numbers);
     }
-
-
 }

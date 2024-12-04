@@ -6,7 +6,7 @@ class CalcStats {
 private:
     // Statistical helper operations
     double calculateMeanHelper(const std::vector<double>& numbers);
-    double calculateMedianHelper(const std::vector<double> numbers);
+    double calculateMedianHelper(std::vector<double> numbers);
     double findLowestHelper(const std::vector<double>& numbers);
     double findHighestHelper(const std::vector<double>& numbers);
     double standardDeviationHelper(const std::vector<double>& numbers);
