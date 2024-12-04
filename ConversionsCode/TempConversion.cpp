@@ -13,6 +13,7 @@ using namespace std;
     Returns floats
 */
 
+//Takes temperature in celcius and desired output unit and converts to that unit
 float celciusConverter (float val, string unitOut){
     if (unitOut == "far") {
         return (val * (9.0 / 5.0)) + 32.0;
@@ -23,6 +24,7 @@ float celciusConverter (float val, string unitOut){
     }
 }
 
+//Takes temperature in farenheit and desired output unit and converts to that unit
 float farenheitConverter (float val, string unitOut) {
     if (unitOut == "cel") {
         return (val - 32) * (5.0/9.0);
@@ -33,6 +35,7 @@ float farenheitConverter (float val, string unitOut) {
     }
 }
 
+//Takes temperature in kelvin and desired output unit and converts to that unit
 float kelvinConverter (float val, string unitOut) {
     if (unitOut == "cel") {
         if (val == static_cast<float>(273.15)) {
