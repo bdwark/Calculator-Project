@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/*
+    Angle Conversions
+    Returns floats
+*/
+
 float degreesToRadians (float val);
 
 float radiansToDegrees (float val);
