@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector> 
 #include <cmath>
-#include "graph_calc.h"
+#include "Graph_calc.h"
 using namespace std;
 
 vector<double> xPointsListFinder(double leftX, double rightX, int pixels) {
