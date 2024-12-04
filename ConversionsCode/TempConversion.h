@@ -3,19 +3,17 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 /*
     Temperature Converter
-    Use far for farenheit
+    Use far for fahrenheit
     Use cel for celsius
     Use kel for kelvin
 
     Returns floats
 */
 
-float celciusConverter (float val, string unitOut);
+float celciusConverter(float val, std::string unitOut);
 
-float farenheitConverter (float val, string unitOut);
+float farenheitConverter(float val, std::string unitOut);
 
-float kelvinConverter (float val, string unitOut);
+float kelvinConverter(float val, std::string unitOut);

@@ -3,10 +3,7 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <math.h>
+#include <cmath>  // Use <cmath> instead of <math.h> for C++ standards
 
-using namespace std;
-
-float LengthConv(float val, string unitIn, string unitOut);
-
-
+// Function declaration
+float LengthConv(float val, std::string unitIn, std::string unitOut);

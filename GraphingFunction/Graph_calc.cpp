@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector> 
 #include <cmath>
-#include "graph_calc.h"
-using namespace std;
+#include "Graph_calc.h"
 
-vector<double> xPointsListFinder(double leftX, double rightX, int pixels) {
-    vector <double> xPoints;
+std::vector<double> xPointsListFinder(double leftX, double rightX, int pixels) {
+    std::vector <double> xPoints;
     double xSpan = rightX - leftX;
     double inc = xSpan/pixels;
     for(int i = 0; i <= pixels; i++){
@@ -14,16 +13,14 @@ vector<double> xPointsListFinder(double leftX, double rightX, int pixels) {
     return xPoints;
 }
 
-
-vector<Polyfunc> graphCalc(double a, double b, double c, double leftX, double rightX, int pixels){
-    vector<double> xPointsList = xPointsListFinder(leftX, rightX, pixels);
-    vector<Polyfunc> pointList;
+std::vector<Polyfunc> graphCalc(double a, double b, double c, double leftX, double rightX, int pixels){
+    std::vector<double> xPointsList = xPointsListFinder(leftX, rightX, pixels);
+    std::vector<Polyfunc> pointList;
     for(int i = 0; i <= xPointsList.size()-1; i++){
-        double y = a*pow(xPointsList[i],2) + b*xPointsList[i]+ c;
+        double y = a*pow(xPointsList[i],2) + b*xPointsList[i] + c;
         Polyfunc pointObj(xPointsList[i], y);
         pointList.push_back(pointObj);
     }
-
 
     return pointList;
 }

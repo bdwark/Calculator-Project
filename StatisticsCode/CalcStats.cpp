@@ -3,16 +3,8 @@
 #include <algorithm>
 #include <numeric>
 #include <stdexcept>
-using namespace std;
 
 CalcStats::CalcStats() {}
-  
-double CalcStats::divideHelper(double a, double b) {
-    if (b == 0) {
-        throw std::invalid_argument("Division by zero is not allowed.");
-    }
-    return a / b;
-}
 
 // Statistical operations
 double CalcStats::calculateMeanHelper(const std::vector<double>& numbers) {
@@ -53,14 +45,14 @@ double CalcStats::findHighestHelper(const std::vector<double>& numbers) {
 
 double CalcStats::standardDeviationHelper(const std::vector<double>& numbers) {
     if (numbers.empty()) {
-        throw std::invalid_argument("Cannot find stanard Deviation in an empty vector.");
+        throw std::invalid_argument("Cannot find standard deviation in an empty vector.");
     }
     double mean = calculateMeanHelper(numbers);
     double total = 0;
-    for (int i = 0; i < numbers.size(); i++) {
-        total = total + pow((numbers[i] - mean), 2);
+    for (size_t i = 0; i < numbers.size(); i++) {
+        total = total + std::pow((numbers[i] - mean), 2);
     }
-    double temp = pow(total/numbers.size(), 1.0 / 2.0);
+    double temp = std::pow(total / numbers.size(), 1.0 / 2.0);
     return temp;
 }
 

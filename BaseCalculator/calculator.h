@@ -2,8 +2,6 @@
 
 #include <string>
 
-using namespace std;
-
 enum Operation {
     ADDITION,
     SUBTRACTION,
@@ -20,12 +18,12 @@ private:
     float result;
     Operation operation;
 
-    string leftOp;
-    string rightOp;
+    std::string leftOp;
+    std::string rightOp;
 
-    void ParseString(string input);
+    void ParseString(std::string input);
 
 public:
-	Calculator();
-    float Calculate(string input);
+    Calculator();
+    float Calculate(std::string input);
 };

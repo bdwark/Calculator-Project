@@ -1,19 +1,18 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <math.h>
+#include <cmath>
 #include "LengthUnitConversion.h"
 
-using namespace std;
-
-//Conversion Function for lengths
-//Inputs can only be mm, cm, m, km, in, ft, yd, or mi
-float LengthConv(float val, string unitIn, string unitOut){
+// Conversion Function for lengths
+// Inputs can only be mm, cm, m, km, in, ft, yd, or mi
+float LengthConv(float val, std::string unitIn, std::string unitOut) {
     float convertedUnit = val;
-    //Metric Start
+
+    // Metric Start
     if (unitIn == "mm") {
-        //Millimeter Dictionary
-        map<string, float> mmConvDict;
+        // Millimeter Dictionary
+        std::map<std::string, float> mmConvDict;
         mmConvDict["in"] = 0.0393701;
         mmConvDict["ft"] = 0.00328084;
         mmConvDict["yd"] = 0.00109361;
@@ -22,14 +21,13 @@ float LengthConv(float val, string unitIn, string unitOut){
         mmConvDict["cm"] = 0.1;
         mmConvDict["m"] = 0.001;
         mmConvDict["km"] = 0.000001;
-        
 
-        //Calculation
+        // Calculation
         convertedUnit = val * mmConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "cm") {
-        //Centimeter Dictionary
-        map<string, float> cmConvDict;
+        // Centimeter Dictionary
+        std::map<std::string, float> cmConvDict;
         cmConvDict["in"] = 0.393701;
         cmConvDict["ft"] = 0.0328084;
         cmConvDict["yd"] = 0.0109361;
@@ -39,12 +37,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         cmConvDict["m"] = 0.01;
         cmConvDict["km"] = 0.00001;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * cmConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "m") {
-        //Meter Dictionary
-        map<string, float> mConvDict;
+        // Meter Dictionary
+        std::map<std::string, float> mConvDict;
         mConvDict["in"] = 39.3701;
         mConvDict["ft"] = 3.28084;
         mConvDict["yd"] = 1.09361;
@@ -54,12 +52,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         mConvDict["m"] = 1;
         mConvDict["km"] = 0.001;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * mConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "km") {
-        //Kilometer Dictionary
-        map<string, float> kmConvDict;
+        // Kilometer Dictionary
+        std::map<std::string, float> kmConvDict;
         kmConvDict["in"] = 39370.1;
         kmConvDict["ft"] = 3280.84;
         kmConvDict["yd"] = 1093.61;
@@ -69,12 +67,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         kmConvDict["m"] = 1000;
         kmConvDict["km"] = 1;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * kmConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "in") {
-        //Inches Dictionary
-        map<string, float> inConvDict;
+        // Inches Dictionary
+        std::map<std::string, float> inConvDict;
         inConvDict["mm"] = 25.4;
         inConvDict["cm"] = 2.54;
         inConvDict["m"] = 0.0254;
@@ -84,12 +82,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         inConvDict["yd"] = 0.2777;
         inConvDict["mi"] = 0.000015782;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * inConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "ft") {
-        //Feet Dictionary
-        map<string, float> ftConvDict;
+        // Feet Dictionary
+        std::map<std::string, float> ftConvDict;
         ftConvDict["mm"] = 304.8;
         ftConvDict["cm"] = 30.48;
         ftConvDict["m"] = 0.3048;
@@ -99,12 +97,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         ftConvDict["yd"] = 0.3333;
         ftConvDict["mi"] = 0.0001893;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * ftConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "yd") {
-        //Yards Dictionary
-        map<string, float> ydConvDict;
+        // Yards Dictionary
+        std::map<std::string, float> ydConvDict;
         ydConvDict["mm"] = 914.4;
         ydConvDict["cm"] = 91.44;
         ydConvDict["m"] = 0.9144;
@@ -114,12 +112,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         ydConvDict["yd"] = 1;
         ydConvDict["mi"] = 0.0005681;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * ydConvDict[unitOut];
         return convertedUnit;
     } else if (unitIn == "mi") {
-        //Miles Dictionary
-        map<string, float> miConvDict;
+        // Miles Dictionary
+        std::map<std::string, float> miConvDict;
         miConvDict["mm"] = 1609000;
         miConvDict["cm"] = 160934;
         miConvDict["m"] = 1609.34;
@@ -129,14 +127,12 @@ float LengthConv(float val, string unitIn, string unitOut){
         miConvDict["yd"] = 1760;
         miConvDict["mi"] = 1;
 
-        //Calculation
+        // Calculation
         convertedUnit = val * miConvDict[unitOut];
         return convertedUnit;
     } else {
-        //Catch all if invalid inputs
-        //cout << "Invalid Inputs" << endl;
+        // Catch all if invalid inputs
+        //std::cout << "Invalid Inputs" << std::endl;
         return convertedUnit;
     }
 }
-
-

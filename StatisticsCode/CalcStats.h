@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <cmath> // For pow()
-using namespace std;
+
 class CalcStats {
 private:
     // Statistical helper operations
