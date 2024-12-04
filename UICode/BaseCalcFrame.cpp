@@ -5,7 +5,9 @@
 #include <wx/wx.h>
 
 BaseCalcFrame::BaseCalcFrame() : wxFrame(nullptr, 1502, "Calculator") {
-	
+	SetMinSize(wxSize(700, 700));
+	SetMaxSize(wxSize(700, 700));	
+
 	// create sizers and grid for components
 	auto* box_sizer = new wxBoxSizer(wxVERTICAL);
 
@@ -97,6 +99,7 @@ BaseCalcFrame::BaseCalcFrame() : wxFrame(nullptr, 1502, "Calculator") {
     box_sizer->Add(grid_sizer, wxSizerFlags().Border(wxALL));
 
     SetSizerAndFit(box_sizer);
+	SetMaxSize(GetBestSize());
 	
 	// Bind functions for buttons
 	Bind(wxEVT_BUTTON, &BaseCalcFrame::OnTextButton, this, 1100, 1115);

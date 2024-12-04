@@ -12,10 +12,13 @@ class CalculatorApp : public wxApp {
 wxIMPLEMENT_APP(CalculatorApp);
 
 bool CalculatorApp::OnInit() {
+
+	//initCursor();
+
 	// Instantiate the module window and show it
 	auto modulesFrame = new ModulesFrame();
 	modulesFrame->Show(true);
-	
+
 	// Set it as the top window so all windows close when it's closed
 	SetTopWindow(modulesFrame);
 	return true;

@@ -1,6 +1,6 @@
 #include "GrapherFrame.h"
 
-#include "../GraphingFunction/graph_calc.h"
+#include "../GraphingFunction/Graph_calc.h"
 #include "../GraphingFunction/Polyfunc.h"
 
 #include <vector>

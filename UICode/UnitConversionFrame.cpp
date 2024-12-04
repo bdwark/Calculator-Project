@@ -27,6 +27,8 @@ enum {
 };
 
 UnitConversionFrame::UnitConversionFrame() : wxFrame(nullptr, 1501, "Unit Converter") {
+	SetMinSize(wxSize(250, 160));
+	SetMaxSize(wxSize(250, 160));
 	panel = new wxPanel(this, wxID_ANY); //main panel
 
 	// unit type selector
