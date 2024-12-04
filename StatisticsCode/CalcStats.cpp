@@ -70,7 +70,7 @@ double CalcStats::calculateMean(const std::vector<double>& numbers) { return cal
 // Finds median
 double CalcStats::calculateMedian(const std::vector<double>& numbers) { return calculateMedianHelper(numbers); }
 // Finds lowest value of a set
-double CalcStats::findLowest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
+double CalcStats::findLowest(const std::vector<double>& numbers) { return findLowestHelper(numbers); }
 // Finds highest value of a set
 double CalcStats::findHighest(const std::vector<double>& numbers) { return findHighestHelper(numbers); }
 // Finds standard deviation of a population
