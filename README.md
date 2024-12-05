@@ -48,3 +48,6 @@ You should get the -DCMAKE_TOOLCHAIN_FILE=<vcpkg-path>/scripts/buildsystems/vcpk
 
 ## License
 [LGPL](https://www.gnu.org/licenses/lgpl-3.0.txt)
+
+## Group Members
+Sam Smallwood, Eve Warkentine, Quinlan Toole, Lauren Rose, Elijah Marshall
