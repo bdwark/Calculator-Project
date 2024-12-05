@@ -16,20 +16,26 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Add wxWidgets repository and install
+    - name: Install dependencies for wxWidgets
       run: |
         sudo apt-get update
-        sudo apt-get install -y software-properties-common
-        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-        sudo add-apt-repository ppa:wxwidgets/stable -y
-        sudo apt-get update
-        sudo apt-get install -y libwxgtk3.2-gtk3-dev
+        sudo apt-get install -y build-essential libgtk-3-dev libjpeg-dev libtiff-dev libpng-dev
+
+    - name: Build wxWidgets from source
+      run: |
+        git clone https://github.com/wxWidgets/wxWidgets.git
+        cd wxWidgets
+        git checkout v3.2.3 # Check out the desired version
+        mkdir build_gtk && cd build_gtk
+        ../configure --enable-unicode --enable-debug --with-gtk=3
+        make -j$(nproc)
+        sudo make install
+        sudo ldconfig
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build \
                  -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
-                 -DwxWidgets_ROOT_DIR=/usr/lib/wx \
-                 -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config
+                 -DwxWidgets_CONFIG_EXECUTABLE=/usr/local/bin/wx-config
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -37,4 +43,3 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/build
       run: ctest -C ${{env.BUILD_TYPE}}
-
