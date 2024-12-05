@@ -15,6 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: recursive # Ensures submodules are initialized
 
     - name: Install dependencies for wxWidgets
       run: |
@@ -23,7 +25,7 @@ jobs:
 
     - name: Build wxWidgets from source
       run: |
-        git clone https://github.com/wxWidgets/wxWidgets.git
+        git clone --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
         cd wxWidgets
         git checkout v3.2.3 # Check out the desired version
         mkdir build_gtk && cd build_gtk
