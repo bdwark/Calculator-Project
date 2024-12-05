@@ -32,8 +32,17 @@ cd Calculator-Project
 g++ -o calculator BaseCalculator/*.cpp ConversionsCode/*.cpp GraphingFunction/*.cpp StatisticsCode/*.cpp UICode/*.cpp `wx-config --cxxflags --libs
 ```
 #### Windows:
-
-
+1. Install cmake
+2. Install wxWidgets
+I recommend installing [wxWidgets via vcpkg](https://docs.wxwidgets.org/latest/plat_msw_install.html)
+3. Clone the cmake branch of the repostiory
+4. Open up a bash terminal in UIcode and running
+```
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=<vcpkg-path>/scripts/buildsystems/vcpkg.cmake
+cmake --build build
+```
+You should get the -DCMAKE_TOOLCHAIN_FILE=<vcpkg-path>/scripts/buildsystems/vcpkg.cmake path from when you ran
+```vcpkg integrate install```
 ## Built with
 [wxWidgets](https://wxwidgets.org/) - Cross-platform GUI library
 
